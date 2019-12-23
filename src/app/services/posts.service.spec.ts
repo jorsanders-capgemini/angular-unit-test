@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataService } from './data.service';
+import { PostsService } from './posts.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Post } from 'src/post.model';
+import { Post } from 'src/app/models/post.model';
 
-describe('DataService', () => {
-  let service: DataService;
+describe('PostsService', () => {
+  let service: PostsService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({ imports: [HttpClientTestingModule] });
-    service = TestBed.get(DataService);
+    service = TestBed.get(PostsService);
     httpMock = TestBed.get(HttpTestingController);
   });
 
