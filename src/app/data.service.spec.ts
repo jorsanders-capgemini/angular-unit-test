@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { DataService } from './data.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { Post } from 'src/post.model';
 
 describe('DataService', () => {
   let service: DataService;
@@ -18,10 +19,11 @@ describe('DataService', () => {
   });
 
   it('should retrieve post from the API via GET', () => {
-    const dummyPosts = [
+    const dummyPosts: Post[] = [
       { userId: '1', id: 1, body: 'hello world', title: 'interesting title' },
       { userId: '2', id: 2, body: 'hello world', title: 'interesting title' }
     ];
+
     service.getPosts().subscribe(posts => {
       expect(posts.length).toBe(2);
       expect(posts).toEqual(dummyPosts);
